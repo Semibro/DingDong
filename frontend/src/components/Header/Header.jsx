@@ -105,8 +105,8 @@ const Header = ({ checkMyRoom }) => {
   }
 
   // 이웃 리스트 - 집 방문 함수
-  const goNeighborHomeHandler = () => {
-    console.log("집 방문 함수")
+  const goNeighborHomeHandler = (roomId) => {
+    window.location.replace(`/room/${roomId}`)
   }
 
   // 이웃 리스트 - 이웃 삭제 함수
@@ -192,7 +192,7 @@ const Header = ({ checkMyRoom }) => {
                   <NeighborListModal
                     imgName={item.avatarId}
                     nickname={item.nickname}
-                    gohome={goNeighborHomeHandler}
+                    gohome={goNeighborHomeHandler(item.roomId)}
                     remove={removeNeighborHandler(item.memberId)}
                     status={item.isActive}
                   />
