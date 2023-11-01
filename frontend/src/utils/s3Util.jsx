@@ -1,12 +1,14 @@
 import AWS from 'aws-sdk';
 
 AWS.config.update({
-  region: import.meta.env.VITE_APP_REGION,
   accessKeyId: import.meta.env.VITE_APP_ACCESS_KEY_ID,
   secretAccessKey: import.meta.env.VITE_APP_SECRET_ACCESS_KEY_ID
 });
 
-const s3 = new AWS.S3();
+const s3 = new AWS.S3({
+  params: { Bucket: 'ding-dong' },
+	region: import.meta.env.VITE_APP_REGION,
+});
 
 const uploadToS3 = async (dataUrl) => {
     const buffer = dataURLToArrayBuffer(dataUrl);
