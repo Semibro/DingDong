@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Share.module.css";
 import html2canvas from "html2canvas";
-import { handleImageUpload } from "../../../utils/s3Util";
+import { handleImageUpload } from "@/utils/s3Util";
 
 const SharePage = ({shareModal, canvasRef}) => {
   const today = new Date();
