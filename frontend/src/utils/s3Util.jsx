@@ -26,24 +26,25 @@ const uploadToS3 = async (dataUrl) => {
       console.error("Error uploading image:", error);
       return null;
     }
-  };
+};
 
-  function dataURLToArrayBuffer(dataURL) {
-    const base64 = dataURL.split(',')[1];
-    const binary = atob(base64);
-    const bytes = new Uint8Array(binary.length);
+function dataURLToArrayBuffer(dataURL) {
+  const base64 = dataURL.split(',')[1];
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
 
-    for (let i = 0; i < binary.length; i++) {
-        bytes[i] = binary.charCodeAt(i);
-    }
+  for (let i = 0; i < binary.length; i++) {
+      bytes[i] = binary.charCodeAt(i);
+  }
 
-    return bytes.buffer;
+  return bytes.buffer;
 }
 
-  export const handleImageUpload = async (canvas) => {
-    const dataUrl = canvas.toDataURL("image/png");
-    const uploadedImageUrl = await uploadToS3(dataUrl);
-    return uploadedImageUrl; // 업로드된 이미지의 URL을 반환
-  };
+export const handleImageUpload = async (canvas) => {
+  const dataUrl = canvas.toDataURL("image/png");
+  const uploadedImageUrl = await uploadToS3(dataUrl);
+
+  return uploadedImageUrl; // 업로드된 이미지의 URL을 반환
+};
 
   
