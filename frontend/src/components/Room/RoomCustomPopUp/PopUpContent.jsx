@@ -37,7 +37,7 @@ const PopUpContent = (props) => {
   const [roomColor, setRoomColor] = useRecoilState(roomColorState);
   const [lightColor, setLightColor] = useRecoilState(lightColorState);
   const [colorChange, setColorChange] = useRecoilState(colorChangeState);
-  const [colorCheck, setColorCheck] = useState(false);
+  const [colorCheck, setColorCheck] = useState(true);
   const [wall, setWall] = useState("click");
   const [light, setLight] = useState("none");
   const addFurniture = (furnitureId, check) => {
@@ -188,7 +188,7 @@ const PopUpContent = (props) => {
       {furnitureList.map((item, index) => (
         <img
           key={index}
-          src={imagePath + `/models/furnitureItemsPng/${item["furnitureId"]}.png`}
+          src={imagePath + `/models/roomitemspng/${item["furnitureId"]}.png`}
           onClick={() => addFurniture(item["furnitureId"], item.categoryId)}
         />
       ))}
