@@ -25,6 +25,7 @@
 - 발생 이벤트 수: 약 **70,000**회+
 - 총 사용자 수: 약 **1,200**명+ (_Google Analytics 기준_) <br/><br/>
 <img src="etc/assets/google_analytics.png" width="800px"/> <br/>
+<b> 삼성 청년 SW 아카데미 자율 프로젝트 대전 2반 2등 </b><br/>
 
 <br />
 
